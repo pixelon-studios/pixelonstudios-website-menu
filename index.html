@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Draggable Menu with Grid Previews | Codrops</title>
+    <meta
+      name="description"
+      content="A draggable menu that shows a thumbnail preview of an image grid"
+    />
+    <meta
+      name="keywords"
+      content="draggable, menu, navigation, thumbnails, grid, javascript, gsap, web design, layout"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function() {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
+  <body class="loading">
+    <main>
+      <div class="frame">
+        <div class="frame__pagetitle">
+          <img
+            style="height:30px;"
+            src="img/pixelon-studios-logo-rebrand.png"
+          />
+        </div>
+        <!-- <div class="frame__title-wrap">
+					<h1 class="frame__title">Yuri Shevchenko</h1>
+					<p class="frame__tagline">2008 &mdash; 2019</a></p>
+				</div> -->
+        <!-- <div class="frame__links">
+					<a href="https://tympanus.net/Development/DraggableImageStrip/">Previous Demo</a>
+					<a href="https://tympanus.net/codrops/?p=40926">Article</a>
+					<a href="https://github.com/codrops/DraggableMenu/">GitHub</a>
+				</div> -->
+        <!-- <div class="frame__social">
+          <a href="#" aria-label="Link to Yuri's Behance profile"
+            ><img
+              src="img/behance.svg"
+              class="frame__social-behance"
+              alt="Behance Logo"
+          /></a>
+        </div> -->
+      </div>
+      <div class="page page--preview">
+        <div class="grid-wrap">
+          <button class="gridback">
+            <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="33px"
+              height="7.07px"
+              viewBox="0 0 33 7.07"
+              style="enable-background:new 0 0 33 7.07;"
+              xml:space="preserve"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: url(#SVGID_1_);
+                }
+
+                .st1 {
+                  fill: url(#SVGID_2_);
+                }
+
+                .st2 {
+                  fill: url(#SVGID_3_);
+                }
+
+                .st3 {
+                  fill: url(#SVGID_4_);
+                }
+
+                .st4 {
+                  fill: url(#SVGID_5_);
+                }
+
+                .st5 {
+                  fill: url(#SVGID_6_);
+                }
+
+                .st6 {
+                  fill: url(#SVGID_7_);
+                }
+
+                .st7 {
+                  fill: url(#SVGID_8_);
+                }
+              </style>
+              <defs></defs>
+              <linearGradient
+                id="SVGID_1_"
+                gradientUnits="userSpaceOnUse"
+                x1="0"
+                y1="5.8929"
+                x2="14.1429"
+                y2="5.8929"
+              >
+                <stop offset="2.024560e-07" style="stop-color:#FF5200" />
+                <stop offset="1" style="stop-color:#EE2200" />
+              </linearGradient>
+              <path class="st0" d="M0,4.71v2.36h14.14V4.71H0z" />
+              <linearGradient
+                id="SVGID_2_"
+                gradientUnits="userSpaceOnUse"
+                x1="18.8571"
+                y1="5.8929"
+                x2="33"
+                y2="5.8929"
+              >
+                <stop offset="2.024560e-07" style="stop-color:#FF5200" />
+                <stop offset="1" style="stop-color:#EE2200" />
+              </linearGradient>
+              <path class="st1" d="M18.86,4.71v2.36H33V4.71H18.86z" />
+              <linearGradient
+                id="SVGID_3_"
+                gradientUnits="userSpaceOnUse"
+                x1="0"
+                y1="1.1786"
+                x2="2.3571"
+                y2="1.1786"
+              >
+                <stop offset="2.024560e-07" style="stop-color:#FF5200" />
+                <stop offset="1" style="stop-color:#EE2200" />
+              </linearGradient>
+              <path class="st2" d="M0,0v2.36h2.36V0H0z" />
+              <linearGradient
+                id="SVGID_4_"
+                gradientUnits="userSpaceOnUse"
+                x1="18.8571"
+                y1="1.1786"
+                x2="21.2143"
+                y2="1.1786"
+              >
+                <stop offset="2.024560e-07" style="stop-color:#FF5200" />
+                <stop offset="1" style="stop-color:#EE2200" />
+              </linearGradient>
+              <path class="st3" d="M18.86,0v2.36h2.36V0H18.86z" />
+            </svg>
+          </button>
+        </div>
+        <!-- /grid-wrap -->
+      </div>
+      <!-- /page -->
+      <div class="menu-wrap">
+        <div class="menu-draggable"></div>
+        <nav class="menu">
+          <div class="menu__item">
+            <a href="index.html" class="menu__item-link">Home</a>
+            <a href="index.html" class="menu__item-explore">Let's begin!</a>
+          </div>
+          <div class="menu__item">
+            <a href="index.html" class="menu__item-link">Services</a>
+            <a href="index.html" class="menu__item-explore">explore</a>
+          </div>
+          <div class="menu__item">
+            <a href="index.html" class="menu__item-link">Contact</a>
+            <a href="index.html" class="menu__item-explore">explore</a>
+          </div>
+        </nav>
+        <!--menu-->
+      </div>
+      <!--/menu-wrap-->
+    </main>
+    <div class="cursor">
+      <div class="cursor__inner cursor__inner--circle">
+        <div class="cursor__side cursor__side--left"></div>
+        <div class="cursor__side cursor__side--right"></div>
+      </div>
+    </div>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/charming.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/draggabilly.pkgd.min.js"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
